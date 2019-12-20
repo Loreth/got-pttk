@@ -81,6 +81,7 @@ CREATE TABLE odznaka_turysty
     FOREIGN KEY (odznaka) REFERENCES odznaka (id),
     FOREIGN KEY (przyznana_przez) REFERENCES pracownik_rw (id),
     FOREIGN KEY (zweryfikowana_przez) REFERENCES przodownik (id),
+    UNIQUE (wlasciciel, odznaka)
 );
 
 CREATE TABLE wycieczka
