@@ -1,40 +1,40 @@
 package po.grupa2.ksiazeczkagot.service;
 
+import java.io.Serializable;
+import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.AbstractPersistable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import po.grupa2.ksiazeczkagot.dto.BaseDto;
-import po.grupa2.ksiazeczkagot.persistance.Identifiable;
 import po.grupa2.ksiazeczkagot.persistance.repositories.BaseRepository;
 import po.grupa2.ksiazeczkagot.service.mapper.BaseMapper;
-
-import java.io.Serializable;
-import java.util.List;
 
 @Service
 @Slf4j
 public abstract class BaseSpecificationCrudService<
-        T extends BaseDto<ID>, U extends Identifiable<ID>, ID extends Serializable>
-        extends BaseCrudService<T, U, ID> implements SpecificationCrudService<T, U, ID> {
-    public BaseSpecificationCrudService(BaseRepository<U, ID> repository, BaseMapper<T, U> mapper) {
-        super(repository, mapper);
-    }
+        T extends BaseDto<ID>, U extends AbstractPersistable<ID>, ID extends Serializable>
+    extends BaseCrudService<T, U, ID> implements SpecificationCrudService<T, U, ID> {
 
-    @Override
-    public List<T> findAll(Specification<U> specification) {
-        return mapper.mapToDtoList(repository.findAll(specification));
-    }
+  public BaseSpecificationCrudService(BaseRepository<U, ID> repository, BaseMapper<T, U> mapper) {
+    super(repository, mapper);
+  }
 
-    @Override
-    public Page<T> findAll(Specification<U> specification, Pageable pageable) {
-        return repository.findAll(specification, pageable).map(mapper::mapToDto);
-    }
+  @Override
+  public List<T> findAll(Specification<U> specification) {
+    return mapper.mapToDtoList(repository.findAll(specification));
+  }
 
-    @Override
-    public List<T> findAll(Specification<U> specification, Sort sort) {
-        return mapper.mapToDtoList(repository.findAll(specification, sort));
-    }
+  @Override
+  public Page<T> findAll(Specification<U> specification, Pageable pageable) {
+    return repository.findAll(specification, pageable).map(mapper::mapToDto);
+  }
+
+  @Override
+  public List<T> findAll(Specification<U> specification, Sort sort) {
+    return mapper.mapToDtoList(repository.findAll(specification, sort));
+  }
 }

@@ -1,18 +1,18 @@
 package po.grupa2.ksiazeczkagot.service;
 
+import java.io.Serializable;
+import java.util.Optional;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.jpa.domain.AbstractPersistable;
 import org.springframework.stereotype.Service;
 import po.grupa2.ksiazeczkagot.dto.BaseDto;
-import po.grupa2.ksiazeczkagot.persistance.Identifiable;
 import po.grupa2.ksiazeczkagot.persistance.repositories.BaseRepository;
 import po.grupa2.ksiazeczkagot.service.mapper.BaseMapper;
-
-import java.util.Optional;
 
 @Service
 @Slf4j
 public abstract class BaseCrudService<
-        T extends BaseDto<ID>, U extends Identifiable<ID>, ID>
+        T extends BaseDto<ID>, U extends AbstractPersistable<ID>, ID extends Serializable>
     extends BaseReadService<T, U, ID> implements CrudService<T, ID> {
 
   public BaseCrudService(BaseRepository<U, ID> repository, BaseMapper<T, U> mapper) {

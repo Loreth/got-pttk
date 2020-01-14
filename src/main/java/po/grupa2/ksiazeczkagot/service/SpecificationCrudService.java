@@ -1,6 +1,8 @@
 package po.grupa2.ksiazeczkagot.service;
 
-import po.grupa2.ksiazeczkagot.persistance.Identifiable;
+import java.io.Serializable;
+import org.springframework.data.jpa.domain.AbstractPersistable;
 
-public interface SpecificationCrudService<T, U extends Identifiable<ID>, ID>
+public interface SpecificationCrudService<
+        T, U extends AbstractPersistable<ID>, ID extends Serializable>
     extends CrudService<T, ID>, SpecificationReadService<T, U, ID> {}

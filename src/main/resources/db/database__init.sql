@@ -25,7 +25,7 @@ CREATE TABLE odznaka
 CREATE TABLE grupa_gorska
 (
     id    identity PRIMARY KEY,
-    nazwa varchar(255) UNIQUE
+    nazwa varchar(255) NOT NULL UNIQUE
 );
 
 CREATE TABLE wspolrzedna
@@ -72,7 +72,7 @@ CREATE TABLE odznaka_turysty
 (
     id                          identity PRIMARY KEY,
     wlasciciel                  bigint NOT NULL,
-    odznaka                     bigint,
+    odznaka                     bigint NOT NULL,
     data_rozpoczecia_zdobywania date,
     data_zdobycia               date,
     przyznana_przez             bigint,
@@ -100,8 +100,8 @@ CREATE TABLE wycieczka
 CREATE TABLE teren_gorski
 (
     id           identity PRIMARY KEY,
-    nazwa        varchar(255) UNIQUE,
-    grupa_gorska bigint NOT NULL,
+    nazwa        varchar(255) NOT NULL UNIQUE,
+    grupa_gorska bigint       NOT NULL,
     FOREIGN KEY (grupa_gorska) REFERENCES grupa_gorska (id)
 );
 
