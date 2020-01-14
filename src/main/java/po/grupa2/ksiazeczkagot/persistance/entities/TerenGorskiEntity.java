@@ -1,0 +1,24 @@
+package po.grupa2.ksiazeczkagot.persistance.entities;
+
+import java.util.Collection;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import lombok.Data;
+import org.springframework.data.jpa.domain.AbstractPersistable;
+
+@Data
+@Entity
+@Table(name = "TEREN_GORSKI")
+public class TerenGorskiEntity extends AbstractPersistable<Long> {
+  private String nazwa;
+
+  @OneToMany(mappedBy = "terenGorski")
+  private Collection<PunktZWykazuEntity> punktyZWykazu;
+
+  @ManyToOne
+  @JoinColumn(name = "GRUPA_GORSKA", referencedColumnName = "ID", nullable = false)
+  private GrupaGorskaEntity grupaGorska;
+}
