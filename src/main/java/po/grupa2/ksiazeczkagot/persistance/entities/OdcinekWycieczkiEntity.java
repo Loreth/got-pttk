@@ -13,6 +13,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 public class OdcinekWycieczkiEntity extends AbstractPersistable<Long> {
   private Integer punktacja;
   private Boolean punktowany;
+  private Integer odleglosc;
 
   @ManyToOne
   @JoinColumn(name = "PUNKT_POCZATKOWY", referencedColumnName = "ID", nullable = false)

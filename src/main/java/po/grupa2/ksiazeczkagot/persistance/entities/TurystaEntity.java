@@ -23,4 +23,8 @@ public class TurystaEntity extends OsobaEntity {
   @ManyToOne
   @JoinColumn(name = "WYLOSOWANY_PRZEDMIOT", referencedColumnName = "ID")
   private PrzedmiotEntity wylosowanyPrzedmiot;
+
+  @OneToOne
+  @JoinColumn(name = "ZDOBYWANA_ODZNAKA", referencedColumnName = "ID")
+  private OdznakaTurystyEntity zdobywanaOdznaka;
 }

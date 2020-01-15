@@ -7,10 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PunktZWykazu extends BaseDto<Long> {
+public class Przedmiot extends BaseDto<Long> {
   private String nazwa;
-  private Integer wysokosc;
-  private Wspolrzedna szerokoscGeograficzna;
-  private Wspolrzedna dlugoscGeograficzna;
-  private long terenGorskiId;
+  private String obrazekUrl;
 }

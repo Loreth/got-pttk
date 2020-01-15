@@ -8,8 +8,8 @@ CREATE TABLE uzytkownik
 
 CREATE TABLE przedmiot
 (
-    id      identity PRIMARY KEY,
-    nazwa   varchar(255) NOT NULL UNIQUE,
+    id          identity PRIMARY KEY,
+    nazwa       varchar(255) NOT NULL UNIQUE,
     obrazek_url varchar(3000)
 );
 
@@ -64,6 +64,7 @@ CREATE TABLE turysta
 (
     id                   bigint PRIMARY KEY,
     wylosowany_przedmiot bigint,
+    zdobywana_odznaka    bigint,
     FOREIGN KEY (id) REFERENCES osoba (id),
     FOREIGN KEY (wylosowany_przedmiot) REFERENCES przedmiot (id)
 );
@@ -83,6 +84,9 @@ CREATE TABLE odznaka_turysty
     FOREIGN KEY (zweryfikowana_przez) REFERENCES przodownik (id),
     UNIQUE (wlasciciel, odznaka)
 );
+
+ALTER TABLE turysta
+    ADD FOREIGN KEY (zdobywana_odznaka) REFERENCES odznaka_turysty (id);
 
 CREATE TABLE wycieczka
 (
@@ -129,7 +133,7 @@ CREATE TABLE punkt
 
 CREATE TABLE punkt_z_wykazu
 (
-    id     bigint PRIMARY KEY,
+    id           bigint PRIMARY KEY,
     teren_gorski bigint NOT NULL,
     FOREIGN KEY (id) REFERENCES punkt (id),
     FOREIGN KEY (teren_gorski) REFERENCES teren_gorski (id),
@@ -141,6 +145,7 @@ CREATE TABLE odcinek_punktowany
     punkt_poczatkowy bigint NOT NULL,
     punkt_koncowy    bigint NOT NULL,
     punktacja        int    NOT NULL,
+    odleglosc        int,
     FOREIGN KEY (punkt_poczatkowy) REFERENCES punkt_z_wykazu (id),
     FOREIGN KEY (punkt_koncowy) REFERENCES punkt_z_wykazu (id),
 );
@@ -152,8 +157,11 @@ CREATE TABLE odcinek_wycieczki
     punkt_koncowy    bigint NOT NULL,
     punktacja        int,
     punktowany       bool DEFAULT FALSE,
+    odleglosc        int    NOT NULL,
     wycieczka        bigint NOT NULL,
     FOREIGN KEY (punkt_poczatkowy) REFERENCES punkt (id),
     FOREIGN KEY (punkt_koncowy) REFERENCES punkt (id),
     FOREIGN KEY (wycieczka) REFERENCES wycieczka (id)
 );
+
+CREATE SEQUENCE hibernate_sequence;

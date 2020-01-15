@@ -12,6 +12,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Table(name = "ODCINEK_PUNKTOWANY")
 public class OdcinekPunktowanyEntity extends AbstractPersistable<Long> {
   private int punktacja;
+  private Integer odleglosc;
 
   @ManyToOne
   @JoinColumn(name = "PUNKT_POCZATKOWY", referencedColumnName = "ID", nullable = false)

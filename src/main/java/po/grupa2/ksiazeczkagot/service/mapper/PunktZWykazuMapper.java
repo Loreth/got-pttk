@@ -10,7 +10,11 @@ import po.grupa2.ksiazeczkagot.persistance.entities.PunktZWykazuEntity;
 public interface PunktZWykazuMapper extends BaseMapper<PunktZWykazu, PunktZWykazuEntity> {
 
   @Override
-  @Mapping(source = "terenGorski.id", target = "terenGorskiId")
+  @Mapping(target = "wysokosc", source = "punkt.wysokosc")
+  @Mapping(target = "szerokoscGeograficzna", source = "punkt.szerokoscGeograficzna")
+  @Mapping(target = "nazwa", source = "punkt.nazwa")
+  @Mapping(target = "dlugoscGeograficzna", source = "punkt.dlugoscGeograficzna")
+  @Mapping(target = "terenGorskiId", source = "terenGorski.id")
   PunktZWykazu mapToDto(PunktZWykazuEntity entity);
 
   @Override
