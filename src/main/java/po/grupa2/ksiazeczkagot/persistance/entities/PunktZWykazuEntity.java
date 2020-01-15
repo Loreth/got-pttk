@@ -13,7 +13,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Table(name = "PUNKT_Z_WYKAZU")
 public class PunktZWykazuEntity extends AbstractPersistable<Long> {
   @OneToOne
-  @JoinColumn(name = "PUNKT_ID", referencedColumnName = "ID", nullable = false)
+  @JoinColumn(name = "ID", referencedColumnName = "ID", nullable = false)
   private PunktEntity punkt;
 
   @ManyToOne

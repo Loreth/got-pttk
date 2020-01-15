@@ -10,7 +10,7 @@ CREATE TABLE przedmiot
 (
     id      identity PRIMARY KEY,
     nazwa   varchar(255) NOT NULL UNIQUE,
-    obrazek blob
+    obrazek_url varchar(3000)
 );
 
 CREATE TABLE odznaka
@@ -129,9 +129,9 @@ CREATE TABLE punkt
 
 CREATE TABLE punkt_z_wykazu
 (
-    punkt_id     bigint PRIMARY KEY,
+    id     bigint PRIMARY KEY,
     teren_gorski bigint NOT NULL,
-    FOREIGN KEY (punkt_id) REFERENCES punkt (id),
+    FOREIGN KEY (id) REFERENCES punkt (id),
     FOREIGN KEY (teren_gorski) REFERENCES teren_gorski (id),
 );
 
@@ -141,8 +141,8 @@ CREATE TABLE odcinek_punktowany
     punkt_poczatkowy bigint NOT NULL,
     punkt_koncowy    bigint NOT NULL,
     punktacja        int    NOT NULL,
-    FOREIGN KEY (punkt_poczatkowy) REFERENCES punkt_z_wykazu (punkt_id),
-    FOREIGN KEY (punkt_koncowy) REFERENCES punkt_z_wykazu (punkt_id),
+    FOREIGN KEY (punkt_poczatkowy) REFERENCES punkt_z_wykazu (id),
+    FOREIGN KEY (punkt_koncowy) REFERENCES punkt_z_wykazu (id),
 );
 
 CREATE TABLE odcinek_wycieczki

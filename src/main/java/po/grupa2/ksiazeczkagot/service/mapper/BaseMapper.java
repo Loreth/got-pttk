@@ -1,5 +1,6 @@
 package po.grupa2.ksiazeczkagot.service.mapper;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface BaseMapper<D, E> {
@@ -8,7 +9,7 @@ public interface BaseMapper<D, E> {
 
   E mapToEntity(D dto);
 
-  List<D> mapToDtoList(List<E> entity);
+  List<D> mapToDtoList(Collection<E> entity);
 
-  List<E> mapToEntityList(List<D> dto);
+  List<E> mapToEntityList(Collection<D> dto);
 }

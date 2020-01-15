@@ -14,10 +14,10 @@ public class OdcinekPunktowanyEntity extends AbstractPersistable<Long> {
   private int punktacja;
 
   @ManyToOne
-  @JoinColumn(name = "PUNKT_POCZATKOWY", referencedColumnName = "PUNKT_ID", nullable = false)
+  @JoinColumn(name = "PUNKT_POCZATKOWY", referencedColumnName = "ID", nullable = false)
   private PunktZWykazuEntity punktPoczatkowy;
 
   @ManyToOne
-  @JoinColumn(name = "PUNKT_KONCOWY", referencedColumnName = "PUNKT_ID", nullable = false)
+  @JoinColumn(name = "PUNKT_KONCOWY", referencedColumnName = "ID", nullable = false)
   private PunktZWykazuEntity punktKoncowy;
 }

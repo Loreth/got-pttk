@@ -6,6 +6,5 @@ import lombok.Data;
 @Data
 @JsonPropertyOrder({"id"})
 public abstract class BaseDto<ID> {
-
   private ID id;
 }
