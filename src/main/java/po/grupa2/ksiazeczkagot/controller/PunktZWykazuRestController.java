@@ -8,8 +8,7 @@ import po.grupa2.ksiazeczkagot.service.CrudService;
 @RestController
 @RequestMapping(RestMappings.PUNKT_Z_WYKAZU)
 public class PunktZWykazuRestController extends BaseRestController<PunktZWykazu, Long> {
-  public PunktZWykazuRestController(
-      CrudService<PunktZWykazu, Long> service) {
+  public PunktZWykazuRestController(CrudService<PunktZWykazu, Long> service) {
     super(service);
   }
 }

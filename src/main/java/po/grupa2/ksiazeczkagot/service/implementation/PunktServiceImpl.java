@@ -13,8 +13,7 @@ public class PunktServiceImpl extends BaseCrudService<Punkt, PunktEntity, Long>
     implements PunktService {
 
   public PunktServiceImpl(
-      BaseRepository<PunktEntity, Long> repository,
-      BaseMapper<Punkt,PunktEntity> mapper) {
+      BaseRepository<PunktEntity, Long> repository, BaseMapper<Punkt, PunktEntity> mapper) {
     super(repository, mapper);
   }
 }

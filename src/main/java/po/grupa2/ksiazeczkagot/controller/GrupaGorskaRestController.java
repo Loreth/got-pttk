@@ -8,8 +8,7 @@ import po.grupa2.ksiazeczkagot.service.CrudService;
 @RestController
 @RequestMapping(RestMappings.GRUPA_GORSKA)
 public class GrupaGorskaRestController extends BaseRestController<GrupaGorska, Long> {
-  public GrupaGorskaRestController(
-      CrudService<GrupaGorska, Long> service) {
+  public GrupaGorskaRestController(CrudService<GrupaGorska, Long> service) {
     super(service);
   }
 }

@@ -14,7 +14,7 @@ public class TerenGorskiServiceImpl extends BaseCrudService<TerenGorski, TerenGo
 
   public TerenGorskiServiceImpl(
       BaseRepository<TerenGorskiEntity, Long> repository,
-      BaseMapper<TerenGorski,TerenGorskiEntity> mapper) {
+      BaseMapper<TerenGorski, TerenGorskiEntity> mapper) {
     super(repository, mapper);
   }
 }

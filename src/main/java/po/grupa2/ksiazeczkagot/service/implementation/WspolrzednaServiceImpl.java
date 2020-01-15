@@ -14,7 +14,7 @@ public class WspolrzednaServiceImpl extends BaseCrudService<Wspolrzedna, Wspolrz
 
   public WspolrzednaServiceImpl(
       BaseRepository<WspolrzednaEntity, Long> repository,
-      BaseMapper<Wspolrzedna,WspolrzednaEntity> mapper) {
+      BaseMapper<Wspolrzedna, WspolrzednaEntity> mapper) {
     super(repository, mapper);
   }
 }

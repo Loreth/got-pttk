@@ -14,7 +14,7 @@ public class PunktZWykazuServiceImpl extends BaseCrudService<PunktZWykazu, Punkt
 
   public PunktZWykazuServiceImpl(
       BaseRepository<PunktZWykazuEntity, Long> repository,
-      BaseMapper<PunktZWykazu,PunktZWykazuEntity> mapper) {
+      BaseMapper<PunktZWykazu, PunktZWykazuEntity> mapper) {
     super(repository, mapper);
   }
 }

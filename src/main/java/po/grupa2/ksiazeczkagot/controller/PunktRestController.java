@@ -8,8 +8,7 @@ import po.grupa2.ksiazeczkagot.service.CrudService;
 @RestController
 @RequestMapping(RestMappings.PUNKT)
 public class PunktRestController extends BaseRestController<Punkt, Long> {
-  public PunktRestController(
-      CrudService<Punkt, Long> service) {
+  public PunktRestController(CrudService<Punkt, Long> service) {
     super(service);
   }
 }

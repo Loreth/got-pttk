@@ -5,4 +5,5 @@ import po.grupa2.ksiazeczkagot.dto.OdcinekPunktowany;
 import po.grupa2.ksiazeczkagot.persistance.entities.OdcinekPunktowanyEntity;
 
 @Mapper(uses = PunktZWykazuMapper.class)
-public interface OdcinekPunktowanyMapper extends BaseMapper<OdcinekPunktowany, OdcinekPunktowanyEntity> {}
+public interface OdcinekPunktowanyMapper
+    extends BaseMapper<OdcinekPunktowany, OdcinekPunktowanyEntity> {}

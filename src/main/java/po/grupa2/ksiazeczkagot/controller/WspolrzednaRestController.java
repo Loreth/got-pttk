@@ -8,8 +8,7 @@ import po.grupa2.ksiazeczkagot.service.CrudService;
 @RestController
 @RequestMapping(RestMappings.WSPOLRZEDNA)
 public class WspolrzednaRestController extends BaseRestController<Wspolrzedna, Long> {
-  public WspolrzednaRestController(
-      CrudService<Wspolrzedna, Long> service) {
+  public WspolrzednaRestController(CrudService<Wspolrzedna, Long> service) {
     super(service);
   }
 }
