@@ -31,9 +31,9 @@ CREATE TABLE grupa_gorska
 CREATE TABLE wspolrzedna
 (
     id      identity PRIMARY KEY,
-    stopnie int NOT NULL,
-    minuty  int NOT NULL,
-    sekundy int NOT NULL
+    stopnie int  NOT NULL,
+    minuty  int  NOT NULL,
+    sekundy real NULL
 );
 
 CREATE TABLE osoba
@@ -124,8 +124,8 @@ CREATE TABLE punkt
     id                     identity PRIMARY KEY,
     nazwa                  varchar(255),
     wysokosc               int,
-    szerokosc_geograficzna bigint NOT NULL,
-    dlugosc_geograficzna   bigint NOT NULL,
+    szerokosc_geograficzna bigint,
+    dlugosc_geograficzna   bigint,
     FOREIGN KEY (szerokosc_geograficzna) REFERENCES wspolrzedna (id),
     FOREIGN KEY (dlugosc_geograficzna) REFERENCES wspolrzedna (id)
 );
@@ -157,7 +157,7 @@ CREATE TABLE odcinek_wycieczki
     punkt_koncowy    bigint NOT NULL,
     punktacja        int,
     punktowany       bool DEFAULT FALSE,
-    odleglosc        int    NOT NULL,
+    odleglosc        int,
     wycieczka        bigint NOT NULL,
     FOREIGN KEY (punkt_poczatkowy) REFERENCES punkt (id),
     FOREIGN KEY (punkt_koncowy) REFERENCES punkt (id),
