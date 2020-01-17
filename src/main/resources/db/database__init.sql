@@ -31,8 +31,8 @@ CREATE TABLE grupa_gorska
 CREATE TABLE wspolrzedna
 (
     id      identity PRIMARY KEY,
-    stopnie int  NOT NULL,
-    minuty  int  NOT NULL,
+    stopnie int    NOT NULL,
+    minuty  int    NOT NULL,
     sekundy double NOT NULL
 );
 
@@ -136,7 +136,7 @@ CREATE TABLE punkt_z_wykazu
     id           bigint PRIMARY KEY,
     teren_gorski bigint NOT NULL,
     FOREIGN KEY (id) REFERENCES punkt (id),
-    FOREIGN KEY (teren_gorski) REFERENCES teren_gorski (id),
+    FOREIGN KEY (teren_gorski) REFERENCES teren_gorski (id)
 );
 
 CREATE TABLE odcinek_punktowany
@@ -147,7 +147,7 @@ CREATE TABLE odcinek_punktowany
     punktacja        int    NOT NULL,
     odleglosc        int,
     FOREIGN KEY (punkt_poczatkowy) REFERENCES punkt_z_wykazu (id),
-    FOREIGN KEY (punkt_koncowy) REFERENCES punkt_z_wykazu (id),
+    FOREIGN KEY (punkt_koncowy) REFERENCES punkt_z_wykazu (id)
 );
 
 CREATE TABLE odcinek_wycieczki
