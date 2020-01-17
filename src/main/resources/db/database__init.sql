@@ -33,7 +33,7 @@ CREATE TABLE wspolrzedna
     id      identity PRIMARY KEY,
     stopnie int  NOT NULL,
     minuty  int  NOT NULL,
-    sekundy real NULL
+    sekundy double NOT NULL
 );
 
 CREATE TABLE osoba

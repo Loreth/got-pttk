@@ -11,5 +11,5 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 public class WspolrzednaEntity extends AbstractPersistable<Long> {
   private int stopnie;
   private int minuty;
-  private int sekundy;
+  private double sekundy;
 }

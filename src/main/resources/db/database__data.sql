@@ -1,10 +1,10 @@
 INSERT INTO PRZEDMIOT(ID, NAZWA, OBRAZEK_URL)
-VALUES (1, 'widelec', ''),
-       (2, 'łyżka', ''),
-       (3, 'chusteczki higieniczne', ''),
-       (4, 'szyszka', ''),
-       (5, 'zakrętka od butelki', ''),
-       (6, 'scyzoryk', '');
+VALUES (1, 'widelec', 'http://localhost:8080/api/zdjecia-przedmiotow/widelec.png'),
+       (2, 'łyżeczka', 'http://localhost:8080/api/zdjecia-przedmiotow/lyzeczka.png'),
+       (3, 'chusteczki higieniczne', 'http://localhost:8080/api/zdjecia-przedmiotow/chusteczki higieniczne.png'),
+       (4, 'szyszka', 'http://localhost:8080/api/zdjecia-przedmiotow/szyszka.png'),
+       (5, 'zakrętka od butelki', 'http://localhost:8080/api/zdjecia-przedmiotow/zakretka od butelki.png'),
+       (6, 'scyzoryk', 'http://localhost:8080/api/zdjecia-przedmiotow/scyzoryk.png');
 
 INSERT INTO UZYTKOWNIK(ID, LOGIN, HASLO, EMAIL)
 VALUES (1, 'ula', 'Pieski123', 'ula@gmail.com'),
@@ -211,9 +211,9 @@ VALUES (1, 27, 28, 5, TRUE, 1),
        (5, 29, 28, 2, TRUE, 2),
        (6, 28, 27, 4, TRUE, 2),
        (7, 27, 34, 1, FALSE, 2),
-       (8, 31, 1, 2, TRUE, 6),
-       (9, 1, 2, 4, TRUE, 4),
-       (8, 2, 3, 2, TRUE, 1),
-       (9, 3, 4, 4, TRUE, 8);
+       (8, 31, 1, 2, TRUE, 3),
+       (9, 1, 2, 4, TRUE, 3),
+       (10, 2, 3, 2, TRUE, 3),
+       (11, 3, 4, 4, TRUE, 3);
 
 

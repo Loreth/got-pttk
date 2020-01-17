@@ -23,5 +23,8 @@ public final class RestMappings {
   public static final String WSPOLRZEDNA = "/wspolrzedne";
   public static final String WYCIECZKA = "/wycieczki";
 
+  public static final String ITEM_PHOTO = "/zdjecia-przedmiotow";
+  public static final String FILE_NAME = "/{fileName}";
+
   private RestMappings() {}
 }

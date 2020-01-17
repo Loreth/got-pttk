@@ -9,7 +9,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Data
 @Entity
-@Table(name = "PUNKT", schema = "PUBLIC", catalog = "TEST")
+@Table(name = "PUNKT")
 public class PunktEntity extends AbstractPersistable<Long> {
   private String nazwa;
   private Integer wysokosc;
