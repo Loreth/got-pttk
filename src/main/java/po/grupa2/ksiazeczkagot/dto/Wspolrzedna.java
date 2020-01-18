@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 public class Wspolrzedna extends BaseDto<Long> {
   private int stopnie;
   private int minuty;
-  private int sekundy;
+  private double sekundy;
 }
