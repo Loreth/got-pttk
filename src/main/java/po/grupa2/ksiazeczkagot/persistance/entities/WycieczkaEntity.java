@@ -2,6 +2,7 @@ package po.grupa2.ksiazeczkagot.persistance.entities;
 
 import java.sql.Timestamp;
 import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -22,7 +23,7 @@ public class WycieczkaEntity extends BaseEntity<Long> {
 
   private Boolean potwierdzona;
 
-  @OneToMany(mappedBy = "wycieczka")
+  @OneToMany(mappedBy = "wycieczka", cascade = CascadeType.ALL)
   private Collection<OdcinekWycieczkiEntity> odcinkiWycieczki;
 
   @ManyToOne
