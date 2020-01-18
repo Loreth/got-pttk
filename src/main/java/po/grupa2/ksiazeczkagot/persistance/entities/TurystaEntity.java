@@ -16,10 +16,6 @@ public class TurystaEntity extends OsobaEntity {
   @OneToMany(mappedBy = "wlasciciel")
   private Collection<OdznakaTurystyEntity> odznakiTurysty;
 
-  @OneToOne
-  @JoinColumn(name = "ID", referencedColumnName = "ID", nullable = false)
-  private OsobaEntity osoba;
-
   @ManyToOne
   @JoinColumn(name = "WYLOSOWANY_PRZEDMIOT", referencedColumnName = "ID")
   private PrzedmiotEntity wylosowanyPrzedmiot;

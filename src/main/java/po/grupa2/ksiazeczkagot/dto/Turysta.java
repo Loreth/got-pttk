@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Turysta extends Osoba {
+
   private Przedmiot wylosowanyPrzedmiot;
   private Long zdobywanaOdznakaId;
 

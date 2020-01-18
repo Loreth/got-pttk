@@ -39,7 +39,7 @@ public abstract class BaseRestController<T extends BaseDto<ID>, ID>
   @Validated(OnCreate.class)
   @PostMapping
   public ResponseEntity<T> create(@Valid @RequestBody T dto, HttpServletRequest request) {
-    if (service.existsById(dto.getId())) {
+    if (dto.getId() != null && service.existsById(dto.getId())) {
       throw new EntityExistsException(ENTITY_EXISTS_EXCEPTION_MSG + dto.getId());
     }
 

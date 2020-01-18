@@ -62,7 +62,7 @@ VALUES (1, 'TATRY I PODTATRZE'),
 INSERT INTO TEREN_GORSKI(ID, NAZWA, GRUPA_GORSKA)
 VALUES (1, 'Tatry Wysokie', 1),
        (2, 'Tatry Zachodnie', 1),
-       (3, 'Podtatrze', 2),
+       (3, 'Podtatrze', 1),
        (4, 'Vysoke Tatry - (Tatry Wysokie - Słowacja)', 2),
        (5, 'Beskid Śląski', 3),
        (6, 'Beskid Żywiecki', 3),
