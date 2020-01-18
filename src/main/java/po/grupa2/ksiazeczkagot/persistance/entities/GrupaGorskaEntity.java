@@ -12,7 +12,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Data
 @Entity
 @Table(name = "GRUPA_GORSKA")
-@SequenceGenerator(name="")
+@SequenceGenerator(name = "")
 public class GrupaGorskaEntity extends AbstractPersistable<Long> {
   @Column(name = "NAZWA")
   private String nazwa;

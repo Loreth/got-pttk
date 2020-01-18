@@ -7,9 +7,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 import org.springframework.data.jpa.domain.Specification;
+import po.grupa2.ksiazeczkagot.dto.BaseDto;
 
 public interface SpecificationReadService<
-        T, U extends AbstractPersistable<ID>, ID extends Serializable>
+        T extends BaseDto<ID>, U extends AbstractPersistable<ID>, ID extends Serializable>
     extends ReadService<T, ID> {
 
   List<T> findAll(Specification<U> specification);

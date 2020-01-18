@@ -4,13 +4,13 @@ import org.springframework.stereotype.Service;
 import po.grupa2.ksiazeczkagot.dto.OdcinekPunktowany;
 import po.grupa2.ksiazeczkagot.persistance.entities.OdcinekPunktowanyEntity;
 import po.grupa2.ksiazeczkagot.persistance.repositories.BaseRepository;
-import po.grupa2.ksiazeczkagot.service.BaseCrudService;
+import po.grupa2.ksiazeczkagot.service.BaseSpecificationCrudService;
 import po.grupa2.ksiazeczkagot.service.OdcinekPunktowanyService;
 import po.grupa2.ksiazeczkagot.service.mapper.BaseMapper;
 
 @Service
 public class OdcinekPunktowanyServiceImpl
-    extends BaseCrudService<OdcinekPunktowany, OdcinekPunktowanyEntity, Long>
+    extends BaseSpecificationCrudService<OdcinekPunktowany, OdcinekPunktowanyEntity, Long>
     implements OdcinekPunktowanyService {
 
   public OdcinekPunktowanyServiceImpl(

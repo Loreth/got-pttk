@@ -11,7 +11,6 @@ public interface TurystaMapper extends BaseMapper<Turysta, TurystaEntity> {
   @Override
   Turysta mapToDto(TurystaEntity entity);
 
-
   @Override
   TurystaEntity mapToEntity(Turysta dto);
 }
