@@ -1,6 +1,8 @@
 package po.grupa2.ksiazeczkagot.controller;
 
-import org.springframework.data.domain.Page;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,12 +23,9 @@ public class PrzedmiotRestController extends BaseRestController<Przedmiot, Long>
   }
 
   @GetMapping(RestMappings.RANDOM_ITEMS)
-  public Page<Przedmiot> handleDrawRandomItems(Pageable pageable, @RequestParam int amount) {
-//    Set<Long> itemsIds = service.findAll
-//    Collections.shuffle(itemsIds);
-//    itemsCount.stream().
-//    ThreadLocalRandom.current().longs(1,itemsCount);
-//
-    return service.findAll(pageable);
+  public List<Przedmiot> handleDrawRandomItems(Pageable pageable, @RequestParam int amount) {
+    List<Przedmiot> allItems = service.findAll();
+    Collections.shuffle(allItems);
+    return allItems.stream().limit(amount).collect(Collectors.toList());
   }
 }
