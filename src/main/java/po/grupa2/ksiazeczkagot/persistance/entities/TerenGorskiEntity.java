@@ -7,12 +7,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Data;
-import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Data
 @Entity
 @Table(name = "TEREN_GORSKI")
-public class TerenGorskiEntity extends AbstractPersistable<Long> {
+public class TerenGorskiEntity extends BaseEntity<Long> {
   private String nazwa;
 
   @OneToMany(mappedBy = "terenGorski")

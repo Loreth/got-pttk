@@ -4,16 +4,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.mapstruct.ObjectFactory;
 import org.mapstruct.TargetType;
-import org.springframework.data.jpa.domain.AbstractPersistable;
 import org.springframework.stereotype.Component;
 import po.grupa2.ksiazeczkagot.dto.BaseDto;
+import po.grupa2.ksiazeczkagot.persistance.entities.BaseEntity;
 
 @Component
 public class EntityFactory {
   @PersistenceContext private EntityManager em;
 
   @ObjectFactory
-  public <T extends AbstractPersistable<?>> T resolveEntity(
+  public <T extends BaseEntity<?>> T resolveEntity(
       BaseDto<?> dto, @TargetType Class<T> entityClass) {
     T entity = null;
 

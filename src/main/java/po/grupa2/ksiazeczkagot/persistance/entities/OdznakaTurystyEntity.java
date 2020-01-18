@@ -9,12 +9,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Data;
-import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Data
 @Entity
 @Table(name = "ODZNAKA_TURYSTY")
-public class OdznakaTurystyEntity extends AbstractPersistable<Long> {
+public class OdznakaTurystyEntity extends BaseEntity<Long> {
   @Column(name = "DATA_ROZPOCZECIA_ZDOBYWANIA")
   private Date dataRozpoczeciaZdobywania;
 

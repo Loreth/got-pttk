@@ -7,13 +7,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.Data;
-import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Data
 @Entity
 @Table(name = "PUNKT")
 @Inheritance(strategy = InheritanceType.JOINED)
-public class PunktEntity extends AbstractPersistable<Long> {
+public class PunktEntity extends BaseEntity<Long> {
   private String nazwa;
   private Integer wysokosc;
 

@@ -163,5 +163,3 @@ CREATE TABLE odcinek_wycieczki
     FOREIGN KEY (punkt_koncowy) REFERENCES punkt (id),
     FOREIGN KEY (wycieczka) REFERENCES wycieczka (id)
 );
-
-CREATE SEQUENCE hibernate_sequence;

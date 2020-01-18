@@ -5,12 +5,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.Data;
-import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Data
 @Entity
 @Table(name = "ODCINEK_PUNKTOWANY")
-public class OdcinekPunktowanyEntity extends AbstractPersistable<Long> {
+public class OdcinekPunktowanyEntity extends BaseEntity<Long> {
   private int punktacja;
   private Integer odleglosc;
 

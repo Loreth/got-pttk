@@ -9,7 +9,8 @@ import po.grupa2.ksiazeczkagot.service.WycieczkaService;
 import po.grupa2.ksiazeczkagot.service.mapper.BaseMapper;
 
 @Service
-public class WycieczkaServiceImpl extends BaseSpecificationCrudService<Wycieczka, WycieczkaEntity, Long>
+public class WycieczkaServiceImpl
+    extends BaseSpecificationCrudService<Wycieczka, WycieczkaEntity, Long>
     implements WycieczkaService {
 
   public WycieczkaServiceImpl(

@@ -6,17 +6,17 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.domain.AbstractPersistable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import po.grupa2.ksiazeczkagot.dto.BaseDto;
+import po.grupa2.ksiazeczkagot.persistance.entities.BaseEntity;
 import po.grupa2.ksiazeczkagot.persistance.repositories.BaseRepository;
 import po.grupa2.ksiazeczkagot.service.mapper.BaseMapper;
 
 @Service
 @Slf4j
 public abstract class BaseSpecificationCrudService<
-        T extends BaseDto<ID>, U extends AbstractPersistable<ID>, ID extends Serializable>
+        T extends BaseDto<ID>, U extends BaseEntity<ID>, ID extends Serializable>
     extends BaseCrudService<T, U, ID> implements SpecificationCrudService<T, U, ID> {
 
   public BaseSpecificationCrudService(BaseRepository<U, ID> repository, BaseMapper<T, U> mapper) {

@@ -7,13 +7,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import lombok.Data;
-import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Data
 @Entity
 @Table(name = "GRUPA_GORSKA")
 @SequenceGenerator(name = "")
-public class GrupaGorskaEntity extends AbstractPersistable<Long> {
+public class GrupaGorskaEntity extends BaseEntity<Long> {
   @Column(name = "NAZWA")
   private String nazwa;
 
