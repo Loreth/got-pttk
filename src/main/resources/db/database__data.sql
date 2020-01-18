@@ -5,7 +5,7 @@ VALUES (1, 'widelec', 'http://localhost:8080/api/zdjecia-przedmiotow/widelec.png
         'http://localhost:8080/api/zdjecia-przedmiotow/chusteczki_higieniczne.png'),
        (4, 'szyszka', 'http://localhost:8080/api/zdjecia-przedmiotow/szyszka.png'),
        (5, 'zakrętka od butelki',
-        'http://localhost:8080/api/zdjecia-przedmiotow/zakretka od butelki.png'),
+        'http://localhost:8080/api/zdjecia-przedmiotow/zakretka_od_butelki.png'),
        (6, 'scyzoryk', 'http://localhost:8080/api/zdjecia-przedmiotow/scyzoryk.png');
 
 INSERT INTO UZYTKOWNIK(ID, LOGIN, HASLO, EMAIL)
