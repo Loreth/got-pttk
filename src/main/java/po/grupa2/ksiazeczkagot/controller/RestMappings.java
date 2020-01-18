@@ -25,6 +25,7 @@ public final class RestMappings {
 
   public static final String ITEM_PHOTO = "/zdjecia-przedmiotow";
   public static final String FILE_NAME = "/{fileName}";
+  public static final String RANDOM_ITEMS = "/losowe";
 
   private RestMappings() {}
 }

@@ -1,7 +1,9 @@
 package po.grupa2.ksiazeczkagot.service;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -30,6 +32,11 @@ public abstract class BaseReadService<
   }
 
   @Override
+  public List<T> findAll() {
+    return repository.findAll().stream().map(mapper::mapToDto).collect(Collectors.toList());
+  }
+
+  @Override
   public boolean existsById(ID id) {
     return repository.existsById(id);
   }
@@ -39,5 +46,10 @@ public abstract class BaseReadService<
     Optional<U> entityOptional = repository.findById(id);
 
     return entityOptional.map(mapper::mapToDto);
+  }
+
+  @Override
+  public long count() {
+    return repository.count();
   }
 }

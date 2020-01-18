@@ -4,12 +4,12 @@ import org.springframework.stereotype.Service;
 import po.grupa2.ksiazeczkagot.dto.Wycieczka;
 import po.grupa2.ksiazeczkagot.persistance.entities.WycieczkaEntity;
 import po.grupa2.ksiazeczkagot.persistance.repositories.BaseRepository;
-import po.grupa2.ksiazeczkagot.service.BaseCrudService;
+import po.grupa2.ksiazeczkagot.service.BaseSpecificationCrudService;
 import po.grupa2.ksiazeczkagot.service.WycieczkaService;
 import po.grupa2.ksiazeczkagot.service.mapper.BaseMapper;
 
 @Service
-public class WycieczkaServiceImpl extends BaseCrudService<Wycieczka, WycieczkaEntity, Long>
+public class WycieczkaServiceImpl extends BaseSpecificationCrudService<Wycieczka, WycieczkaEntity, Long>
     implements WycieczkaService {
 
   public WycieczkaServiceImpl(
