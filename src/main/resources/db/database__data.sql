@@ -52,6 +52,13 @@ VALUES (1, 1, 4, '2019-04-04', null, null, null),
        (4, 2, 6, '2016-10-31', '2017-07-01', 4, 3),
        (5, 2, 7, '2017-07-02', null, null, null);
 
+UPDATE TURYSTA
+SET ZDOBYWANA_ODZNAKA = 1
+where ID = 1;
+UPDATE TURYSTA
+SET ZDOBYWANA_ODZNAKA = 5
+where ID = 2;
+
 INSERT INTO GRUPA_GORSKA(ID, NAZWA)
 VALUES (1, 'TATRY I PODTATRZE'),
        (2, 'TATRY SŁOWACKIE'),
