@@ -11,6 +11,7 @@ public class OdcinekWycieczki extends BaseDto<Long> {
   private Integer punktacja;
   private Boolean punktowany;
   private Integer odleglosc;
+  private Integer przewyzszenie;
   private Punkt punktPoczatkowy;
   private Punkt punktKoncowy;
   private long wycieczkaId;

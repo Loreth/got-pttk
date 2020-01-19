@@ -13,6 +13,7 @@ public class OdcinekWycieczkiEntity extends BaseEntity<Long> {
   private Integer punktacja;
   private Boolean punktowany;
   private Integer odleglosc;
+  private Integer przewyzszenie;
 
   @ManyToOne
   @JoinColumn(name = "PUNKT_POCZATKOWY", referencedColumnName = "ID", nullable = false)
