@@ -8,10 +8,20 @@ import org.springframework.stereotype.Component;
 import po.grupa2.ksiazeczkagot.dto.BaseDto;
 import po.grupa2.ksiazeczkagot.persistance.entities.BaseEntity;
 
+/** Klasa wykorzystywana przez MapStruct, odpowiedzialna za dostarczanie obiektu encji */
 @Component
 public class EntityFactory {
   @PersistenceContext private EntityManager em;
 
+  /**
+   * Metoda zwracająca obiekt encji na podstawie tego, czy istnieje ona w bazie danych pod id
+   * dostępnym w dto
+   *
+   * @param dto Obiekt dto, z którego zostaną pobrane dane
+   * @param entityClass Klasa encji
+   * @param <T> Typ encji
+   * @return
+   */
   @ObjectFactory
   public <T extends BaseEntity<?>> T resolveEntity(
       BaseDto<?> dto, @TargetType Class<T> entityClass) {
