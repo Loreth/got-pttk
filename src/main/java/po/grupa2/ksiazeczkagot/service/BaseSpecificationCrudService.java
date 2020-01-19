@@ -13,6 +13,14 @@ import po.grupa2.ksiazeczkagot.persistance.entities.BaseEntity;
 import po.grupa2.ksiazeczkagot.persistance.repositories.BaseRepository;
 import po.grupa2.ksiazeczkagot.service.mapper.BaseMapper;
 
+/**
+ * Klasa bazowa dla serwisu wspierającego funkcjonalność CRUD z bazą danych, wyszukiwanie encji przy
+ * użyciu springowych specyfikacji, oraz wykorzystująca mapowanie pomiędzy dto a encjami
+ *
+ * @param <T> Typ DTO
+ * @param <U> Typ encji
+ * @param <ID> Typ ID encji
+ */
 @Service
 @Slf4j
 public abstract class BaseSpecificationCrudService<

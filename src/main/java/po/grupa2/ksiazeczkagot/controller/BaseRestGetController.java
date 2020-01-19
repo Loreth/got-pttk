@@ -11,6 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 import po.grupa2.ksiazeczkagot.dto.BaseDto;
 import po.grupa2.ksiazeczkagot.service.ReadService;
 
+/**
+ * Klasa bazowa dla kontrolera obsługującego zapytania GET
+ *
+ * @param <T> Typ zwracany i przyjmowany przez metody kontrolera
+ * @param <ID> Typ ID encji
+ */
 @RequiredArgsConstructor
 @CrossOrigin(origins = "${cors.origin.angularapp}", allowedHeaders = "*")
 @RestController

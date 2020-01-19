@@ -97,7 +97,8 @@ CREATE TABLE wycieczka
     przynalezna_odznaka bigint NOT NULL,
     potwierdzona_przez  bigint,
     FOREIGN KEY (potwierdzona_przez) REFERENCES przodownik (id),
-    FOREIGN KEY (przynalezna_odznaka) REFERENCES odznaka_turysty (id)
+    FOREIGN KEY (przynalezna_odznaka) REFERENCES odznaka_turysty (id),
+    CHECK data_zakonczenia >= data_rozpoczecia
 );
 
 
@@ -158,6 +159,7 @@ CREATE TABLE odcinek_wycieczki
     punktacja        int,
     punktowany       bool DEFAULT FALSE,
     odleglosc        int,
+    przewyzszenie    int,
     wycieczka        bigint NOT NULL,
     FOREIGN KEY (punkt_poczatkowy) REFERENCES punkt (id),
     FOREIGN KEY (punkt_koncowy) REFERENCES punkt (id),

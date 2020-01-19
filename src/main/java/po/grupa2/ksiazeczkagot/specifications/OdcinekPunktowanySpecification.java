@@ -10,6 +10,7 @@ import net.kaczmarzyk.spring.data.jpa.web.annotation.Spec;
 import org.springframework.data.jpa.domain.Specification;
 import po.grupa2.ksiazeczkagot.persistance.entities.OdcinekPunktowanyEntity;
 
+/** Specyfikacja wyszukiwania po parametrach dla odcinka punktowanego */
 @Joins(fetch = {@JoinFetch(paths = "punktPoczatkowy"), @JoinFetch(paths = "punktKoncowy")})
 @And({
   @Spec(path = "punktacja", params = "punktacjaMin", spec = GreaterThanOrEqual.class),

@@ -10,6 +10,13 @@ import lombok.EqualsAndHashCode;
 import org.springframework.data.domain.Persistable;
 import org.springframework.lang.Nullable;
 
+/**
+ * Klasa bazowa dla encji, odpowiednik org.springframework.data.jpa.domain.AbstractPersistable.
+ * Powstała ze względu na błędną strategię generowania klucza głównego przyjmowaną przez Hibernate w
+ * przypadku naszej bazy danych.
+ *
+ * @param <PK> Typ klucza głównego
+ */
 @EqualsAndHashCode
 @MappedSuperclass
 public abstract class BaseEntity<PK extends Serializable> implements Persistable<PK> {

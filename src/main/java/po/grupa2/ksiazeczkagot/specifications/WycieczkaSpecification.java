@@ -11,6 +11,7 @@ import po.grupa2.ksiazeczkagot.persistance.entities.TurystaEntity_;
 import po.grupa2.ksiazeczkagot.persistance.entities.WycieczkaEntity;
 import po.grupa2.ksiazeczkagot.persistance.entities.WycieczkaEntity_;
 
+/** Specyfikacja wyszukiwania po parametrach dla wycieczki */
 @Data
 public class WycieczkaSpecification implements Specification<WycieczkaEntity> {
   private final Long turystaId;

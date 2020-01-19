@@ -1,5 +1,6 @@
 package po.grupa2.ksiazeczkagot.controller;
 
+/** Klasa zawierająca stałe ze ścieżkami API */
 public final class RestMappings {
   public static final String API = "/api";
   public static final String ID = "/{id}";

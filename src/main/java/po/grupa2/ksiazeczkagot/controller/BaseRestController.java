@@ -20,6 +20,12 @@ import po.grupa2.ksiazeczkagot.service.CrudService;
 import po.grupa2.ksiazeczkagot.validation.groups.OnCreate;
 import po.grupa2.ksiazeczkagot.validation.groups.OnPut;
 
+/**
+ * Klasa bazowa dla kontrolera wspierającego wzorzec REST
+ *
+ * @param <T> Typ zwracany i przyjmowany przez metody kontrolera
+ * @param <ID> Typ ID encji
+ */
 @RestController
 @CrossOrigin(origins = "${cors.origin.angularapp}", allowedHeaders = "*")
 @Validated
