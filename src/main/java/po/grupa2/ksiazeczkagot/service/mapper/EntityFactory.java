@@ -2,6 +2,7 @@ package po.grupa2.ksiazeczkagot.service.mapper;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import lombok.extern.slf4j.Slf4j;
 import org.mapstruct.ObjectFactory;
 import org.mapstruct.TargetType;
 import org.springframework.stereotype.Component;
@@ -10,6 +11,7 @@ import po.grupa2.ksiazeczkagot.persistance.entities.BaseEntity;
 
 /** Klasa wykorzystywana przez MapStruct, odpowiedzialna za dostarczanie obiektu encji */
 @Component
+@Slf4j
 public class EntityFactory {
   @PersistenceContext private EntityManager em;
 
@@ -35,7 +37,7 @@ public class EntityFactory {
       try {
         entity = entityClass.newInstance();
       } catch (InstantiationException | IllegalAccessException e) {
-        e.printStackTrace();
+        log.error(e.getMessage());
       }
     }
 

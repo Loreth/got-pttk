@@ -24,6 +24,7 @@
     <hibernate-jpamodelgen.version>5.4.4.Final</hibernate-jpamodelgen.version>
     <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
     <springfox-swagger-ui.version>2.9.2</springfox-swagger-ui.version>
+    <assertj-core.version>3.14.0</assertj-core.version>
   </properties>
 
   <dependencies>
@@ -83,6 +84,12 @@
       <groupId>io.springfox</groupId>
       <artifactId>springfox-swagger-ui</artifactId>
       <version>${springfox-swagger-ui.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>${assertj-core.version}</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 

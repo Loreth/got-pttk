@@ -1,5 +1,8 @@
 package po.grupa2.ksiazeczkagot.service.implementation;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import po.grupa2.ksiazeczkagot.dto.Przedmiot;
 import po.grupa2.ksiazeczkagot.persistance.entities.PrzedmiotEntity;
@@ -16,5 +19,12 @@ public class PrzedmiotServiceImpl extends BaseCrudService<Przedmiot, PrzedmiotEn
       BaseRepository<PrzedmiotEntity, Long> repository,
       BaseMapper<Przedmiot, PrzedmiotEntity> mapper) {
     super(repository, mapper);
+  }
+
+  @Override
+  public List<Przedmiot> drawRandomItems(int amount) {
+    List<Przedmiot> allItems = findAll();
+    Collections.shuffle(allItems);
+    return allItems.stream().limit(amount).collect(Collectors.toList());
   }
 }
