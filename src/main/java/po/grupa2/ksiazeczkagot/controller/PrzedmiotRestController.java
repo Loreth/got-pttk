@@ -1,7 +1,6 @@
 package po.grupa2.ksiazeczkagot.controller;
 
 import java.util.List;
-import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,7 +20,7 @@ public class PrzedmiotRestController extends BaseRestController<Przedmiot, Long>
   }
 
   @GetMapping(RestMappings.RANDOM_ITEMS)
-  public List<Przedmiot> handleDrawRandomItems(Pageable pageable, @RequestParam int amount) {
+  public List<Przedmiot> handleDrawRandomItems(@RequestParam int amount) {
     return service.drawRandomItems(amount);
   }
 }
