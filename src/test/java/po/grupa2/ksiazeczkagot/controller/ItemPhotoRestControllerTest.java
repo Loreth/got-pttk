@@ -25,7 +25,7 @@ class ItemPhotoRestControllerTest {
 
     // when & then
     mockMvc
-        .perform(get(RestMappings.ITEM_PHOTO + filename))
+        .perform(get(RestMappings.ITEM_PHOTO + "/" + filename))
         .andExpect(status().isOk())
         .andExpect(content().contentType(MediaType.IMAGE_PNG))
         .andExpect(
